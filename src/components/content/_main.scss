@@ -1,0 +1,93 @@
+.main {
+    margin-top: 100px;
+
+    .container {
+        width: 1140px;
+        margin: 0 auto;
+
+        overflow-x: hidden;
+        border: 1px solid green;
+    }
+
+    &__wrapper {
+        display: flex;
+
+        .ingridients {
+            padding: 20px 0;
+            flex-basis: 65%;
+            border: 1px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+
+            &__title {
+                @include font(32px, $ffOswaldReg, 400, #000000, inherit, left, 36px);
+                padding: 20px;
+            }
+
+            &__list-images {
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+
+                li {
+                    width: 180px;
+                    height: 180px;
+                    border: 1px solid orange;
+                    margin: 10px 32px;
+                    @include flex(center, inherit);
+                    align-items: center;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        .menu {
+            flex-basis: 35%;
+            border: 1px solid blue;
+            padding: 20px 0;
+
+            .menu__wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            &__title {
+                @include font(32px, $ffOswaldReg, 400, #000000, inherit, left, 32px);
+                margin-bottom: 8px;
+
+            }
+
+            &__pizza-price {
+                background-color: #716f6f;
+                padding:8px;
+                border-radius: 20px;
+                @include font(22px, $ffOswaldReg, 400, #ffffff, inherit, left, 22px);
+            }
+
+            &__reset-btn {
+                @include font(22px, $ffOswaldReg, 400, #2d2626, inherit, left, 22px);
+                background-color: orange;
+                border: none;
+                padding: 4px 8px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            &__ingridients{
+                width: 100%;
+                border: 1px solid blueviolet;
+            }
+        }
+        .menu__ingridients-item{
+        
+        }
+    }
+}

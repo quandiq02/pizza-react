@@ -1,0 +1,25 @@
+.header {
+  background-color: #2D2727;
+  position: sticky;
+  width: 100%;
+  top: 0;
+
+  &__wrapper {
+    display: flex;
+    margin: 0 20px;
+    padding: 10px 0;
+
+    div {
+      @include font(24px, $ffOswaldReg, 400, #fff, inherit, left, 36px);
+    }
+
+    .header__title {
+      color: #d3d3d3;
+    }
+
+    div+div {
+      margin-left: 10px;
+    }
+  }
+
+}

@@ -1,0 +1,218 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Rubik", sans-serif;
+  src: url("../fonts/Rubik/Rubik-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald/Oswald-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald/Oswald-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Bold.ttf");
+  font-weight: 700;
+}
+.header {
+  background-color: #2D2727;
+  position: sticky;
+  width: 100%;
+  top: 0;
+}
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 20px;
+  padding: 10px 0;
+}
+.header__wrapper div {
+  font-size: 24px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #fff;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 36px;
+}
+.header__wrapper .header__title {
+  color: #d3d3d3;
+}
+.header__wrapper div + div {
+  margin-left: 10px;
+}
+
+.main {
+  margin-top: 100px;
+}
+.main .container {
+  width: 1140px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  border: 1px solid green;
+}
+.main__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main__wrapper .ingridients {
+  padding: 20px 0;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main__wrapper .ingridients__title {
+  font-size: 32px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 36px;
+  padding: 20px;
+}
+.main__wrapper .ingridients__list-images {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.main__wrapper .ingridients__list-images li {
+  width: 180px;
+  height: 180px;
+  border: 1px solid orange;
+  margin: 10px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: inherit;
+      flex-wrap: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main__wrapper .ingridients__list-images li img {
+  width: 100%;
+  height: auto;
+}
+.main__wrapper .menu {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  border: 1px solid blue;
+  padding: 20px 0;
+}
+.main__wrapper .menu .menu__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.main__wrapper .menu__title {
+  font-size: 32px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+.main__wrapper .menu__pizza-price {
+  background-color: #716f6f;
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 22px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 22px;
+}
+.main__wrapper .menu__reset-btn {
+  font-size: 22px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #2d2626;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 22px;
+  background-color: orange;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.main__wrapper .menu__ingridients {
+  width: 100%;
+  border: 1px solid blueviolet;
+}/*# sourceMappingURL=style.css.map */
