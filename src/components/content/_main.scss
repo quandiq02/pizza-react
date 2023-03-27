@@ -4,9 +4,7 @@
     .container {
         width: 1140px;
         margin: 0 auto;
-
         overflow-x: hidden;
-        border: 1px solid green;
     }
 
     &__wrapper {
@@ -15,7 +13,6 @@
         .ingridients {
             padding: 20px 0;
             flex-basis: 65%;
-            border: 1px solid red;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
@@ -34,7 +31,7 @@
                 li {
                     width: 180px;
                     height: 180px;
-                    border: 1px solid orange;
+                    border: 1px solid #b4b4b4;
                     margin: 10px 32px;
                     @include flex(center, inherit);
                     align-items: center;
@@ -49,7 +46,6 @@
 
         .menu {
             flex-basis: 35%;
-            border: 1px solid blue;
             padding: 20px 0;
 
             .menu__wrapper {
@@ -57,7 +53,7 @@
                 flex-wrap: wrap;
                 padding: 20px;
                 align-items: center;
-                justify-content: space-around;
+                justify-content: space-between;
             }
 
             &__title {
@@ -68,7 +64,7 @@
 
             &__pizza-price {
                 background-color: #716f6f;
-                padding:8px;
+                padding: 8px;
                 border-radius: 20px;
                 @include font(22px, $ffOswaldReg, 400, #ffffff, inherit, left, 22px);
             }
@@ -81,13 +77,64 @@
                 cursor: pointer;
                 border-radius: 4px;
             }
-            &__ingridients{
+
+            &__ingridients {
+                @include font(22px, $ffOswaldReg, 400, #2d2626, inherit, left, 22px);
+
                 width: 100%;
-                border: 1px solid blueviolet;
+                margin-top: 25px;
             }
         }
-        .menu__ingridients-item{
-        
+
+        .menu__ingridients-item {
+            border: 1px solid #b4b4b4;
+            padding: 20px;
+            border-collapse: collapse;
+            @include flex(space-between, inherit);
+            align-items: center;
+        }
+
+        .menu__ingridients-item+.menu__ingridients-item {
+            border-top: 1px solid transparent;
+        }
+
+        .item__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-minus,
+            &-plus,
+            &-value {
+                width: 40px;
+                height: 40px;
+                border: 2px solid transparent;
+                color: #fff;
+                font-size: 25px;
+            }
+
+            &-minus {
+                cursor: pointer;
+                background-color: red;
+            }
+
+            &-plus {
+                cursor: pointer;
+                background-color: green;
+            }
+
+            &-value {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #f3f3f3;
+                color: #000000;
+            }
+        }
+
+        .item__info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
     }
 }
