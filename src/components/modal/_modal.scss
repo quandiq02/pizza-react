@@ -1,0 +1,57 @@
+.modal__content {
+    transform: scale(0);
+    display: none;
+}
+
+.modal__content-active {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+}
+
+.modal__block {
+    background-color: #fff;
+    border-radius: 20px;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px
+}
+
+.modal__title,
+.modal__total-price {
+    @include font(32px, $ffOswaldReg, 400, #000000, inherit, left, 32px);
+}
+
+.modal__subtitle {
+    @include font(24px, $ffOswaldReg, 400, #000000, inherit, left, 24px);
+}
+
+.modal__btns {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+
+    .modal__btn-exit {
+        background-color: rgb(41, 32, 32);
+    }
+
+    .modal__btn-continue {
+        background-color: rgb(64, 158, 173);
+    }
+}
+
+.ingridients__list {
+    @include font(16px, $ffInterBold, 400, #000000, inherit, left, 32px);
+
+}

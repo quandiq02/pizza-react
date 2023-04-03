@@ -1,90 +1,8 @@
-import coldcutsImg from "../../images/coldcuts.jpg";
-import pepperoniImg from "../../images/pepperoni.jpg";
-import fetaImg from "../../images/feta.jpg";
-import deskImg from "../../images/desk.jpg";
-import mozzarellaImg from "../../images/mozzarella.jpg";
-import swisscheeseImg from "../../images/swisscheese.jpg";
-import spicesImg from "../../images/spices.jpg";
-import vegetablesImg from "../../images/vegetables.jpg";
 import { useReducer, useState } from "react";
-
-const data = [
-  {
-    id: 0,
-    name: "Cold cuts",
-    img: coldcutsImg,
-    isAdded: false,
-    count: 0,
-    price: 3,
-  },
-  {
-    id: 1,
-    name: "Pepperoni",
-    img: pepperoniImg,
-    isAdded: false,
-    count: 0,
-    price: 2.5,
-  },
-  { id: 2, name: "Feta", img: fetaImg, isAdded: false, count: 0, price: 1.5 },
-  {
-    id: 3,
-    name: "Mozzarella",
-    img: mozzarellaImg,
-    isAdded: false,
-    count: 0,
-    price: 1,
-  },
-  {
-    id: 4,
-    name: "Swiss cheese",
-    img: swisscheeseImg,
-    isAdded: false,
-    count: 0,
-    price: 2,
-  },
-  {
-    id: 5,
-    name: "Spices",
-    img: spicesImg,
-    isAdded: false,
-    count: 0,
-    price: 0.25,
-  },
-  {
-    id: 6,
-    name: "Vegetables",
-    img: vegetablesImg,
-    isAdded: false,
-    count: 0,
-    price: 0.75,
-  },
-  { id: 7, name: "desk", img: deskImg, isAdded: true, count: 1, price: 0 },
-];
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "increment":
-      return state.map((elem) =>
-        elem.id === action.index
-          ? { ...elem, count: elem.count + 1, isAdded: true }
-          : elem
-      );
-    case "decrement":
-      return state.map((elem) =>
-        elem.id === action.index && elem.count > 0
-          ? elem.count === 1
-            ? { ...elem, isAdded: false, count: elem.count - 1 }
-            : { ...elem, count: elem.count - 1 }
-          : elem
-      );
-    case "reset-all":
-      return state.map((elem) =>
-        elem.id < data.length - 1 ? { ...elem, count: 0, isAdded: false } : elem
-      );
-    default:
-      throw new Error();
-  }
-}
+import { data } from "../data";
+import Modal from "../modal/modal";
+import reducer from "../reducer";
+import Header from "../header/header";
 
 export default function Main() {
   const [ingridients, setIngridients] = useState(data);
@@ -160,11 +78,23 @@ export default function Main() {
                   )
                 )}
               </ul>
+              <div className="total__price">
+                <div className="total__price-text">Total</div>
+                <div className="total__price-value">{price}$</div>
+              </div>
+              <div className="menu__buttons buttons">
+                <button className="buttons__save">Save pizza</button>
+                <Modal price={price} state={state} />
+              </div>
+              <div className="menu__buttons buttons">
+                <button className="buttons__load">Load pizza</button>
+              </div>
+              <div className="save__info"></div>
             </div>
           </div>
         </div>
       </div>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(state, null, 2)}</pre> */}
     </div>
   );
 }

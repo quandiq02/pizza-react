@@ -288,4 +288,280 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+}
+.main__wrapper .total__price,
+.main__wrapper .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: inherit;
+      flex-wrap: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.main__wrapper .total__price {
+  padding: 15px 20px;
+  border: 1px solid #b4b4b4;
+  font-size: 20px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 32px;
+}
+.main__wrapper .buttons {
+  padding: 15px 20px;
+  border: 1px solid #b4b4b4;
+}
+.main__wrapper .buttons button {
+  font-size: 20px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #fff;
+  text-transform: inherit;
+  text-align: center;
+  line-height: 20px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+}
+.main__wrapper .buttons__save {
+  background-color: green;
+}
+.main__wrapper .buttons__checkout {
+  background-color: blue;
+}
+.main__wrapper .buttons__load {
+  background-color: #463636;
+}
+
+.modal__content {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  display: none;
+}
+
+.modal__content-active {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.modal__block {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.modal__title,
+.modal__total-price {
+  font-size: 32px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 32px;
+}
+
+.modal__subtitle {
+  font-size: 24px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 24px;
+}
+
+.modal__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.modal__btns .modal__btn-exit {
+  background-color: rgb(41, 32, 32);
+}
+.modal__btns .modal__btn-continue {
+  background-color: rgb(64, 158, 173);
+}
+
+.ingridients__list {
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 32px;
+}
+
+.checkout {
+  margin-top: 70px;
+}
+.checkout .container {
+  width: 1140px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.checkout__wrapper {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+.checkout__title {
+  font-size: 32px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: center;
+  line-height: 36px;
+}
+.checkout__name, .checkout__email, .checkout__delivery, .checkout__textarea, .checkout__radio, .checkout__checkbox, .checkout__coupon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #000000;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 18px;
+}
+.checkout__name-input, .checkout__email-input, .checkout__delivery-input, .checkout__textarea-input, .checkout__radio-input, .checkout__checkbox-input, .checkout__coupon-input {
+  height: 30px;
+  width: 90%;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid rgb(197, 197, 197);
+}
+.checkout__name-input:hover, .checkout__email-input:hover, .checkout__delivery-input:hover, .checkout__textarea-input:hover, .checkout__radio-input:hover, .checkout__checkbox-input:hover, .checkout__coupon-input:hover {
+  border: 1px solid black;
+}
+.checkout__name-input:focus, .checkout__email-input:focus, .checkout__delivery-input:focus, .checkout__textarea-input:focus, .checkout__radio-input:focus, .checkout__checkbox-input:focus, .checkout__coupon-input:focus {
+  border: 1px solid #651fff;
+}
+.checkout__textarea textarea {
+  height: 100px;
+  padding-top: 5px;
+}
+.checkout__tab {
+  width: 100%;
+}
+.checkout__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.checkout__radio-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.checkout__radio-field #no {
+  margin-left: 10px;
+}
+.checkout__radio-field label {
+  margin-left: 3px;
+}
+.checkout__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.checkout__checkbox-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+.checkout__checkbox-field input {
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+}
+.checkout__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.checkout__button button {
+  font-size: 18px;
+  font-family: "Oswald";
+  font-weight: 400;
+  color: #fff;
+  text-transform: inherit;
+  text-align: left;
+  line-height: 18px;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+}
+.checkout__button-reset {
+  background-color: #463636;
+}
+.checkout__button-submit {
+  background-color: rgb(18, 119, 169);
+  margin-left: 10px;
 }/*# sourceMappingURL=style.css.map */
