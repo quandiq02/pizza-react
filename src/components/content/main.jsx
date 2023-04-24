@@ -1,15 +1,32 @@
-import { useReducer, useState } from "react";
+import { useReducer, useState, useRef } from "react";
 import { data } from "../data";
 import Modal from "../modal/modal";
 import reducer from "../reducer";
-import Header from "../header/header";
-
+import GeneratePassword from "../others/pass-gen";
+import LoadPizzaModal from "../loadpizza-modal/loadpizza";
 export default function Main() {
   const [ingridients, setIngridients] = useState(data);
-  const [state, dispatch] = useReducer(reducer, data);
-  const [price, setPrice] = useState(3);
+  const [active, setActive] = useState(false);
+  let [price, setPrice] = useState(3);
+  const spanRef = useRef(null);
+  const _lsCheck = JSON.parse(localStorage.getItem("check"));
+  const _lsPizza = JSON.parse(localStorage.getItem("saved-pizza")) ?? [];
+  const _lsPrice =_lsPizza.reduce((acc, obj) => acc + obj.count * obj.price, 0) ?? 3;
+  const [state, dispatch] = useReducer(reducer, _lsCheck ? _lsPizza : data);
+  function savetoLS() {
+    localStorage.setItem("saved-pizza", JSON.stringify(state));
+  }
+  function GetTextValue() {
+    const text = spanRef.current.innerText;
+    navigator.clipboard.writeText(text);
+    localStorage.setItem("pass", JSON.stringify(text));
+  }
+
   return (
     <div className="main">
+      {state == _lsPizza
+        ? localStorage.setItem("check", JSON.stringify(false))
+        : ""}
       <div className="container">
         <div className="main__wrapper">
           <div className="ingridients">
@@ -29,7 +46,9 @@ export default function Main() {
           <div className="menu">
             <div className="menu__wrapper">
               <div className="menu__title">Your pizza</div>
-              <div className="menu__pizza-price">{price}$</div>
+              <div className="menu__pizza-price">
+                {state == _lsPizza ? price=_lsPrice : price}$
+              </div>
               <button
                 className="menu__reset-btn"
                 onClick={() => {
@@ -80,21 +99,40 @@ export default function Main() {
               </ul>
               <div className="total__price">
                 <div className="total__price-text">Total</div>
-                <div className="total__price-value">{price}$</div>
+                <div className="total__price-value">
+                  {state == _lsPizza ? _lsPrice : price}$
+                </div>
               </div>
               <div className="menu__buttons buttons">
-                <button className="buttons__save">Save pizza</button>
+                <button
+                  className="buttons__save"
+                  onClick={() => {
+                    setActive(true);
+                    savetoLS();
+                    setTimeout(() => {
+                      GetTextValue();
+                    }, 0);
+                  }}
+                >
+                  Save pizza
+                </button>
                 <Modal price={price} state={state} />
               </div>
               <div className="menu__buttons buttons">
-                <button className="buttons__load">Load pizza</button>
+                <LoadPizzaModal price={price} state={state} />
               </div>
-              <div className="save__info"></div>
+              {active ? (
+                <div className="save__info">
+                  Your pizza configuration has been saved. Your number is :
+                  <span ref={spanRef}>{GeneratePassword(22)}</span>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>
       </div>
-      {/* <pre>{JSON.stringify(state, null, 2)}</pre> */}
     </div>
   );
 }

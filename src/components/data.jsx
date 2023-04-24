@@ -56,5 +56,5 @@ export const data = [
     count: 0,
     price: 0.75,
   },
-  { id: 7, name: "desk", img: deskImg, isAdded: true, count: 1, price: 0 },
+  { id: 7, name: "desk", img: deskImg, isAdded: true, count: 1, price: 3 },
 ];

@@ -20,6 +20,7 @@ export default function reducer(state, action) {
         return state.map((elem) =>
           elem.id < data.length - 1 ? { ...elem, count: 0, isAdded: false } : elem
         );
+     
       default:
         throw new Error();
     }

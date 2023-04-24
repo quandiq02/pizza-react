@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 const Modal = (props) => {
   const [modalActive, setModalActive] = useState(false);
+  function savetoLS() {
+    localStorage.setItem("pizza", JSON.stringify(props.state));
+  }
   return (
     <div className="modal">
       <div className="modal__wrapper">
@@ -20,7 +23,7 @@ const Modal = (props) => {
             <div className="modal__subtitle">
               The pizza has following ingridients
             </div>
-            <ul className="ingridients__list">
+            <ul className="ingridients__list-modal">
               {props.state.map((elem) =>
                 elem.id < props.state.length - 1 && elem.count > 0 ? (
                   <li>
@@ -43,7 +46,9 @@ const Modal = (props) => {
                 Cancel
               </button>
               <Link to="/checkout">
-                <button className="modal__btn-continue">Continue</button>
+                <button className="modal__btn-continue" onClick={savetoLS}>
+                  Continue
+                </button>
               </Link>
             </div>
           </div>

@@ -47,11 +47,11 @@
     }
 
     .modal__btn-continue {
-        background-color: rgb(64, 158, 173);
+        background-color: #409ead;
     }
 }
 
-.ingridients__list {
+.ingridients__list-modal {
     @include font(16px, $ffInterBold, 400, #000000, inherit, left, 32px);
 
 }

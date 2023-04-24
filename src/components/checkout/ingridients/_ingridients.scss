@@ -1,0 +1,49 @@
+.ingridients {
+    margin-top: 70px;
+
+    .container {
+        width: 1140px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    &__wrapper {
+        width: 830px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    &__title {
+        @include font(32px, $ffOswaldReg, 400, #000000, inherit, center, 36px);
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__img{
+        width: 198px;
+        height: 200px;
+    }
+    li {
+        width: 200px;
+        height: 270px;
+        border: 1px solid #b4b4b4;
+        margin: 10px 32px;
+        @include flex(center, inherit);
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+  
+    &__count{
+        justify-self: end;
+    }
+
+}
